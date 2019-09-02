@@ -9,8 +9,12 @@ class ParkingLot {
     entranceGate = document.getElementById('entrance-gate');
     exitGate = document.getElementById('exit-gate');
 
-    constructor(calculatePrice){
-        this.calculatePrice = calculatePrice;
+    constructor(shopStrategy){//(shopStrategy)
+        this.shopStrategy = shopStrategy;
+        this.calculatePrice = shopStrategy.calculatePrice;
+        this.customerInformation = shopStrategy.customerInformation;
+        
+        //this.calculatePrice = calculatePrice;
     }
     
     checkin(licensePlate) {
