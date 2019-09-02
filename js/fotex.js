@@ -2,6 +2,10 @@
 
 class fotexShopStrategy{
 
+    getDescription(){
+        return "Velkommen til Føtex. Det koster 15 kr pr påbegyndt kvarter"
+    }
+
     calculatePrice(checkinTime, checkoutTime){
         const time = (checkoutTime - checkinTime) / 1000;
         return 15 * (Math.floor(time/15)+1);
@@ -9,5 +13,5 @@ class fotexShopStrategy{
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    main(new ParkingLot(calculatePrice));
+    main(new ParkingLot(new fotexShopStrategy()));
 });

@@ -12,7 +12,7 @@ class ParkingLot {
     constructor(shopStrategy){//(shopStrategy)
         this.shopStrategy = shopStrategy;
         this.calculatePrice = shopStrategy.calculatePrice;
-        this.customerInformation = shopStrategy.customerInformation;
+        this.getDescription = shopStrategy.getDescription;
         
         //this.calculatePrice = calculatePrice;
     }

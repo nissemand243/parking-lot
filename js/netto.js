@@ -1,24 +1,24 @@
 //faktas strategy
 
-class faktaShopStrategy{
+class nettoShopStrategy{
     
     getDescription(){
-        return "De første 5 minutter er gratis, men vi vil så gerne have at i bliver lidt længere herefter koster det 20 kr pr 15 min"
+        return "De første 15 minutter er til 10 kr, herefter koster det 5 kr pr 15 min"
     }
     
     calculatePrice(checkinTime, checkoutTime){
         
         const time = ((checkoutTime - checkinTime) / 1000)-5;
         if (time < 0) {
-            return 0;
+            return 10;
         } else {
-            return 20 * (Math.floor(time/15) + 1);
+            return 10 + (20 * (Math.floor(time/15) + 1));
         }
     }
 
 }
 document.addEventListener('DOMContentLoaded', () => {
-    const parkingLot = new ParkingLot(new faktaShopStrategy());
+    const parkingLot = new ParkingLot(new nettoShopStrategy());
 
     main(parkingLot);
 });
